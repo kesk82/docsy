@@ -49,12 +49,12 @@ module.exports = {
       scriptLoading: 'defer',
       minify: false
     }),
-    // new HtmlWebpackPlugin({
-    //   template: 'src/generic.html',
-    //   filename: 'generic.html',
-    //   scriptLoading: 'defer',
-    //   minify: false
-    // }),
+    new HtmlWebpackPlugin({
+      template: 'src/generic.html',
+      filename: 'generic.html',
+      scriptLoading: 'defer',
+      minify: false
+    }),
     // new HtmlWebpackPlugin({
     //   template: 'src/elements.html',
     //   filename: 'elements.html',
