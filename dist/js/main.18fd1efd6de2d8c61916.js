@@ -59,9 +59,8 @@ function refreshNavbar() {
 }
 
 document.addEventListener('scroll', e => {
-  console.clear();
-  console.log(navBarContainer.offsetTop);
-
+  // console.clear();
+  // console.log(navBarContainer.offsetTop);
   // console.log("window.scrollY: ", window.scrollY);
   // console.log("document.documentElement.clientHeight: ", document.documentElement.clientHeight);
   // console.log("window.innerHeight: ", window.innerHeight);
@@ -70,7 +69,6 @@ document.addEventListener('scroll', e => {
   // console.log("pageFooterRect.top: ", pageFooterRect.top);
   // console.log("pageFooter.offsetTop: ", pageFooter.offsetTop);
   // console.log("navBar.offsetHeight: ", navBar.offsetHeight)
-
   refreshNavbar();
 });
 

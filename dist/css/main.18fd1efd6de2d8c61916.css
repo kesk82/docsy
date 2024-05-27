@@ -356,6 +356,26 @@ template {
   box-sizing: border-box;
   --color-space-cadet-std: hsla(233, 22%, 23%,1);
   --color-space-cadet-wlight-oposit: hsla(53.1,22.4%,95%,1);
+  --text-alt-color: #212931;
+  --hr-line-color: #eeeeee;
+  --pre-code-background: #404040;
+  --pre-code-color: #eee;
+  --pre-code-border-color: #aaa;
+  --page-background-color: #fff;
+  --header-text-color: #fff;
+  --header-background-color: #120110;
+  --body-background: #340324;
+  --body-text-color: #333;
+  --nav-bar-text-color: #fff;
+  --nav-bar-bg-color: #58a;
+  --nav-bar-width: 50px;
+  --nav-bar-border-color: #aaa;
+}
+
+@media screen and (max-width: 460px) {
+  :root {
+    --nav-bar-width: 40px;
+  }
 }
 
 *,
@@ -413,10 +433,6 @@ ol {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #212931;
-}
-
-h1, h2, h3, h4, h5, h6 {
   font-weight: 900;
   line-height: 1.5;
   margin: 0 0 1rem 0;
@@ -437,7 +453,7 @@ hr {
   border: 0;
   border-bottom: solid 2px;
   margin: 3rem 0;
-  border-bottom-color: #eeeeee;
+  border-bottom-color: var(--hr-line-color);
 }
 
 img {
@@ -445,12 +461,12 @@ img {
 }
 
 body {
-  background: #ccc;
-  color: #333;
+  background: var(--body-background);
+  color: var(--body-text-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #310b0b;
+  color: var(--text-alt-color);
   text-transform: uppercase;
 }
 
@@ -459,13 +475,13 @@ header h1, header h2, header h3, header h4, header h5, header h6 {
   }
 
 pre {
-  background-color: #404040;
+  background-color: var(--pre-code-background);
   font-family: monospace;
   padding: 15px;
-  color: #eee;
+  color: var(--pre-code-color);
   overflow: auto;
   border-radius: 6px;
-  box-shadow: 0 6px 0 0 #aaa;
+  box-shadow: 0 6px 0 0 var(--pre-code-border-color);
 }
 
 #page-wrapper {
@@ -475,7 +491,7 @@ pre {
   /* border-right: 1px solid #ccc; */
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.6);
   margin: 160px auto;
-  background: #fff;
+  background: var(--page-background-color);
   flex-wrap: wrap;
 }
 
@@ -502,26 +518,26 @@ pre {
   flex: 0 0 100%;
   padding: .5em;
   margin: 0;
-  background: #333;
-  color: white;
+  background: var(--header-background-color);
+  color: var(--header-text-color);
   overflow: hidden;
   font-weight: 700;
-  text-shadow: 0 -1px 1px #335166;
+  /* text-shadow: 0 -1px 1px #665166; */
   position: relative;
   text-align: center;
   text-transform: uppercase;
 }
 
 #header a {
-    color: white;
+    color: var(--header-text-color);
   }
 
 #nav {
-  flex: 0 0 50px;
-  background-color: #58a;
-  color: #fff;
+  flex: 0 0 var(--nav-bar-width);
+  background-color: var(--nav-bar-bg-color);
+  color: var(--nav-bar-text-color);
   border: 0;
-  width: 50px;
+  width: var(--nav-bar-width);
   overflow: hidden;
   position: relative;
 }
@@ -535,9 +551,9 @@ pre {
     top: 0;
     bottom: auto;
     min-height: 100vh;
-    background-color: #58a;
-    color: #fff;
-    width: 50px;
+    background-color: var(--nav-bar-bg-color);
+    color: var(--nav-bar-text-color);
+    width: var(--nav-bar-width);
     overflow: hidden;
   }
 
@@ -557,30 +573,30 @@ body.navbar-end :is(#nav #nav-wrapper) {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 50px;
+    width: var(--nav-bar-width);
   }
 
 #nav ul li {
-      width: 50px;
-      height: 50px;
+      width: var(--nav-bar-width);
+      height: var(--nav-bar-width);
       padding: 0;
       margin: 0;
       overflow: hidden;
-      border-top: 1px dotted #aaa;
+      border-top: 1px dotted var(--nav-bar-border-color);
       position: relative;
     }
 
 #nav ul li a {
         display: block;
         margin: 0;
-        padding: 10px;
+        padding: calc(var(--nav-bar-width) / 5);
       }
 
 #nav ul li svg {
         display: block;
-        width: 30px;
-        height: 30px;
-        fill: #fff;
+        width: calc( var(--nav-bar-width) - calc(var(--nav-bar-width) / 5 * 2) );
+        height: calc( var(--nav-bar-width) - calc(var(--nav-bar-width) / 5 * 2) );
+        fill: var(--nav-bar-text-color);
         /* position: absolute;
         top: 50%;
         left: 50%;
@@ -638,10 +654,10 @@ body.navbar-end :is(#nav #nav-wrapper) {
 
 #footer {
   flex: 0 0 100%;
-  background: #333;
-  color: white;
+  background: var(--header-background-color);
+  color: var(--header-text-color);
 }
 
 #footer a {
-    color: white;
+    color: var(--header-text-color);
   }
